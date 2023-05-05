@@ -1,4 +1,4 @@
-public class Pilot extends Employee implements  CheckPilot{
+public class Pilot extends Employee{
 
     public void setCompass(boolean compass) {
         this.compass = true;

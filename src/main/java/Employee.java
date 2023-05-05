@@ -5,10 +5,10 @@ abstract class Employee {
     private LocalDate birthDate;
     private Type type;
 
-    public Employee(String name,Type type) {
+    public Employee(String name, Type type) {
         this.name = name;
-        this.birthDate = LocalDate.now();
         this.type = type;
+        this.birthDate = LocalDate.now();
     }
 
 
