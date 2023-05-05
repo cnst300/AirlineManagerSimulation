@@ -1,0 +1,50 @@
+@startuml
+
+enum Language{
+ENGLISH,
+GERMAN,
+SPANISH,
+POLISH
+}
+
+enum Type{
+CAPTAIN,
+CO_PILOT,
+FLIGHT_ATTENDANT,
+}
+
+abstract class Employee{
+- name: String;
+- birthDate: LocalDate;
+- type: Type;
+}
+
+class Pilot extends Employee {
+- compass: boolean;
++ setCompass(): void;
+}
+
+class Attendant extends Employee{
+- language: Language;
++ getLanguage(): Language;
+}
+
+class Flight implements Flight_Check{
+- id: UUID;
+- crew: List<Employee>;
+- language: Language;
+}
+
+interface Flight_Check{
++ isCrewComplete(): boolean
++ isSameLanguage(): boolean;
++ isReadyToFlight(): boolean;
++ pilotsHasCompass(): boolean;
+}
+
+Employee-->Type
+Attendant-->Language
+Flight-->Employee
+Flight-->Language
+
+@enduml
