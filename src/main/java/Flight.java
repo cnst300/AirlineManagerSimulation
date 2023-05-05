@@ -1,13 +1,16 @@
 import java.util.ArrayList;
 import java.util.List;
+import java.util.UUID;
 
 public class Flight implements FlightCheck{
 
+    private UUID id;
     private List<Employee> crew;
 
     public Flight(Language language) {
         this.language = language;
         this.crew= new ArrayList<>();
+        this.id= UUID.randomUUID();
     }
 
     private Language language;
